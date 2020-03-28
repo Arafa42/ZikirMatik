@@ -2,17 +2,24 @@ package com.example.zikirmatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.gson.Gson;
 
 public class AllahuEkber extends AppCompatActivity {
 
     Button tellerKnopPlus,tellerKnopMin;
     TextView tellerText;
     int teller=0;
+    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -48,40 +55,37 @@ public class AllahuEkber extends AppCompatActivity {
         });
 
 
+        
 
-
-
-        LoadData();
+        getObjectFromPreferences(fAuth.getCurrentUser().getUid());
     }
 
 
-    public void saveData(){
 
 
-        SharedPreferences sharedPreferences = getSharedPreferences("saveTeller1",MODE_PRIVATE);
-        SharedPreferences.Editor editor = sharedPreferences.edit();
-        editor.putInt("tellerWaarde1",teller);
+
+    public void saveObjectToPreferences(String key) {
+        SharedPreferences prefs = getSharedPreferences(key, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt(key, teller);
         editor.apply();
     }
 
 
-
-    public void LoadData(){
-
-        SharedPreferences sharedPreferences = getSharedPreferences("saveTeller1",MODE_PRIVATE);
-        teller = sharedPreferences.getInt("tellerWaarde1",MODE_PRIVATE);
-
-      tellerText.setText(String.valueOf(teller));
-
-
+    public void getObjectFromPreferences(String key) {
+        SharedPreferences prefs = getSharedPreferences(key, Context.MODE_PRIVATE);
+        teller = prefs.getInt(key, MODE_PRIVATE);
+        tellerText.setText(String.valueOf(teller));
     }
+
+
 
 
 
     @Override
     protected void onPause(){
         super.onPause();
-        saveData();
+        saveObjectToPreferences(fAuth.getCurrentUser().getUid());
     }
 
 }
