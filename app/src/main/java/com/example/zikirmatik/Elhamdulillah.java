@@ -2,6 +2,7 @@ package com.example.zikirmatik;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -21,7 +22,7 @@ public class Elhamdulillah extends AppCompatActivity {
 
         tellerKnopPlus = findViewById(R.id.buttonPlus);
         tellerKnopMin = findViewById(R.id.buttonMin);
-        tellerText = findViewById(R.id.nummer);
+        tellerText = findViewById(R.id.nummer3);
 
 
         tellerKnopPlus.setOnClickListener(new View.OnClickListener() {
@@ -48,7 +49,36 @@ public class Elhamdulillah extends AppCompatActivity {
 
 
 
+    LoadData();
+
+    }
+
+    public void saveData(){
 
 
+        SharedPreferences sharedPreferences = getSharedPreferences("saveTeller3",MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        editor.putInt("tellerWaarde3",teller);
+        editor.apply();
+    }
+
+
+
+    public void LoadData(){
+
+        SharedPreferences sharedPreferences = getSharedPreferences("saveTeller3",MODE_PRIVATE);
+        teller = sharedPreferences.getInt("tellerWaarde3",MODE_PRIVATE);
+
+        tellerText.setText(String.valueOf(teller));
+
+
+    }
+
+
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        saveData();
     }
 }

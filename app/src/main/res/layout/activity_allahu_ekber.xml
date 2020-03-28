@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/app_bg"
-    tools:context=".Ilahe_Vahdehu">
+    tools:context=".AllahuEkber">
 
 
     <TextView
@@ -41,7 +41,7 @@
 
 
     <TextView
-        android:id="@+id/nummer"
+        android:id="@+id/nummer1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
@@ -88,7 +88,7 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/buttonPlus"
+        android:id="@+id/buttonPlus1"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="8dp"
@@ -99,14 +99,14 @@
         android:layout_marginBottom="32dp"
         android:background="#02D4FA"
         android:text="+"
-        app:layout_constraintBottom_toTopOf="@+id/buttonMin"
+        app:layout_constraintBottom_toTopOf="@+id/buttonMin1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nummer" />
+        app:layout_constraintTop_toBottomOf="@+id/nummer1" />
 
     <Button
-        android:id="@+id/buttonMin"
+        android:id="@+id/buttonMin1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
