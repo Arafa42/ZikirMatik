@@ -12,17 +12,51 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".EsmaUlHusna"  android:parentActivityName=".MainActivity"></activity>
-        <activity android:name=".AllahuEkber"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Elhamdulillah"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Subhanallah"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Estagfirullah"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".SubhanallahiVelhamdulillahi"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".SubhanallahiBiHamdihi"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".LaHavleVela"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".LaIlaheIllallah"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Ilahe_Melikul"  android:parentActivityName=".MainActivity"/>
-        <activity android:name=".Ilahe_Vahdehu"  android:parentActivityName=".MainActivity"/>
+        <activity android:name=".OzetSubhanallahiVelhamdulillahi"  android:parentActivityName=".History"></activity>
+        <activity android:name=".OzetSubhanallahiBiHamdihi"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetSubhanallah"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetLaIlaheIllallah"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetLaHavleVela"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetIlahe_Vahdehu"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetIlahe_Melikul"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetEstagfirullah"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetEsmaUlHusna"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetElhamdulillah"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetBismillahiSubhanallahi"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetAllahuEkber"  android:parentActivityName=".History"/>
+        <activity
+            android:name=".EsmaUlHusna"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".AllahuEkber"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Elhamdulillah"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Subhanallah"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Estagfirullah"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SubhanallahiVelhamdulillahi"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".SubhanallahiBiHamdihi"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LaHavleVela"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".LaIlaheIllallah"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Ilahe_Melikul"
+            android:parentActivityName=".MainActivity" />
+        <activity
+            android:name=".Ilahe_Vahdehu"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".BismillahiSubhanallahi"
             android:parentActivityName=".MainActivity" />

@@ -55,7 +55,7 @@ public class AllahuEkber extends AppCompatActivity {
         });
 
 
-        
+
 
         getObjectFromPreferences(fAuth.getCurrentUser().getUid());
     }
@@ -67,14 +67,14 @@ public class AllahuEkber extends AppCompatActivity {
     public void saveObjectToPreferences(String key) {
         SharedPreferences prefs = getSharedPreferences(key, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = prefs.edit();
-        editor.putInt(key, teller);
+        editor.putInt("teller1", teller);
         editor.apply();
     }
 
 
     public void getObjectFromPreferences(String key) {
         SharedPreferences prefs = getSharedPreferences(key, Context.MODE_PRIVATE);
-        teller = prefs.getInt(key, MODE_PRIVATE);
+        teller = prefs.getInt("teller1", MODE_PRIVATE);
         tellerText.setText(String.valueOf(teller));
     }
 
