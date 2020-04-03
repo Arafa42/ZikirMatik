@@ -43,7 +43,7 @@
 
     <TextView
         android:id="@+id/zikirTplmSayi"
-        android:layout_width="27dp"
+        android:layout_width="wrap_content"
         android:layout_height="84dp"
         android:layout_marginTop="112dp"
         android:fontFamily="@font/aref_ruqaa_bold"
