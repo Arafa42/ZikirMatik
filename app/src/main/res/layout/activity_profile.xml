@@ -225,5 +225,35 @@
         android:text="Phone"
         android:textSize="18sp" />
 
+    <Switch
+        android:id="@+id/noti"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/vibra"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="62dp"
+        android:layout_marginLeft="62dp"
+        android:layout_marginEnd="25dp"
+        android:checked="true"
+        android:layout_marginRight="24dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/vibra"
+        android:layout_toRightOf="@+id/vibra"
+        android:text="Notifications" />
+
+    <Switch
+        android:id="@+id/vibra"
+        android:layout_width="150dp"
+        android:checked="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/profilePhone"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="24dp"
+        android:text="Vibration" />
+
 
 </RelativeLayout>

@@ -25,6 +25,7 @@ public class AllahuEkber extends AppCompatActivity {
     FirebaseAuth fAuth = FirebaseAuth.getInstance();
     Vibrator vibe;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,8 +44,9 @@ public class AllahuEkber extends AppCompatActivity {
 
                 teller++;
                 tellerText.setText(Integer.toString(teller));
-                vibe.vibrate(75);
-            }
+               if(Profile.vibraCheck) { vibe.vibrate(75); }
+
+               }
         });
 
         tellerKnopMin.setOnClickListener(new View.OnClickListener() {
@@ -54,7 +56,7 @@ public class AllahuEkber extends AppCompatActivity {
                 if(teller > 0) {
                     teller--;
                     tellerText.setText(Integer.toString(teller));
-                    vibe.vibrate(20);
+                    if(Profile.vibraCheck) { vibe.vibrate(20); }
                 }
             }
         });

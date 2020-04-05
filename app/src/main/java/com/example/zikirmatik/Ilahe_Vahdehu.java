@@ -38,7 +38,8 @@ public class Ilahe_Vahdehu extends AppCompatActivity {
 
                 teller++;
                 tellerText.setText(Integer.toString(teller));
-                vibe.vibrate(75);
+                if(Profile.vibraCheck) { vibe.vibrate(75); }
+
 
             }
         });
@@ -51,7 +52,7 @@ public class Ilahe_Vahdehu extends AppCompatActivity {
                 if(teller > 0) {
                     teller--;
                     tellerText.setText(Integer.toString(teller));
-                    vibe.vibrate(20);
+                    if(Profile.vibraCheck) { vibe.vibrate(20); }
                 }
             }
         });

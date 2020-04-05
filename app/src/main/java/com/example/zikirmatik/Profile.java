@@ -4,12 +4,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -28,6 +31,9 @@ public class Profile extends AppCompatActivity {
     FirebaseFirestore fStore;
     String userId;
     Button logout;
+    Switch vibra;
+    public static boolean vibraCheck=true;
+    SharedPreferences sharedPreferences;
 
 
     @Override
@@ -43,6 +49,24 @@ public class Profile extends AppCompatActivity {
         fStore = FirebaseFirestore.getInstance();
         userId = fAuth.getCurrentUser().getUid();
         logout = findViewById(R.id.logout);
+        vibra = findViewById(R.id.vibra);
+
+        sharedPreferences = getSharedPreferences("vibra",MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        vibra.setChecked(sharedPreferences.getBoolean("switch",true));
+        vibra.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){editor.putBoolean("switch",true);}
+                else{editor.putBoolean("switch",false);}
+                editor.apply();
+                vibraCheck = vibra.isChecked();
+            }
+        });
+
+
+
 
         DocumentReference documentReference = fStore.collection("users").document(userId);
         documentReference.addSnapshotListener(this, new EventListener<DocumentSnapshot>() {
@@ -92,6 +116,9 @@ public class Profile extends AppCompatActivity {
         });
 
 
+
     }
+
+
 
 }
