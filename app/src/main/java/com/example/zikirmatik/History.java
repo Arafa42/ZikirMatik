@@ -1,15 +1,23 @@
 package com.example.zikirmatik;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -17,6 +25,11 @@ import java.util.List;
 public class History extends AppCompatActivity {
 
     ListView listView;
+    int teller=0,teller1=0,teller2=0,teller3=0,teller4=0,teller5=0,teller6=0,teller7=0,teller8=0,teller9=0,teller10=0,teller11=0;
+    TextView numara;
+    FirebaseAuth fAuth = FirebaseAuth.getInstance();
+    ImageButton trashcan;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +39,8 @@ public class History extends AppCompatActivity {
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navi);
         bottomNavigationView.setSelectedItemId(R.id.charts);
         listView = findViewById(R.id.listview);
-
+        numara = findViewById(R.id.numara);
+        trashcan = findViewById(R.id.trashcan);
 
         ArrayList<String> arrayList = new ArrayList<>();
 
@@ -92,6 +106,76 @@ public class History extends AppCompatActivity {
 
         });
 
+        getObjectFromPreferences(fAuth.getCurrentUser().getUid());
+
+
+        trashcan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                teller=0;
+                teller1=0;
+                teller2=0;
+                teller3=0;
+                teller4=0;
+                teller5=0;
+                teller6=0;
+                teller7=0;
+                teller8=0;
+                teller9=0;
+                teller10=0;
+                teller11=0;
+                numara.setText(Integer.toString(teller+teller1+teller2+teller3+teller4+teller5+teller6+teller7+teller8+teller9+teller10+teller11));
+
+            }
+        });
+    }
+
+
+    public void saveObjectToPreferences(String key) {
+        SharedPreferences prefs = getSharedPreferences(key, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = prefs.edit();
+        editor.putInt("teller1", teller);
+        editor.putInt("teller2", teller1);
+        editor.putInt("teller3", teller2);
+        editor.putInt("teller4", teller3);
+        editor.putInt("teller5", teller4);
+        editor.putInt("teller6", teller5);
+        editor.putInt("teller7", teller6);
+        editor.putInt("teller8", teller7);
+        editor.putInt("teller9", teller8);
+        editor.putInt("teller10", teller9);
+        editor.putInt("teller11", teller10);
+        editor.putInt("teller12", teller11);
+        editor.apply();
+    }
+
+
+    public void getObjectFromPreferences(String key) {
+        SharedPreferences prefs = getSharedPreferences(key, Context.MODE_PRIVATE);
+        teller = prefs.getInt("teller1", MODE_PRIVATE);
+        teller1 = prefs.getInt("teller2", MODE_PRIVATE);
+        teller2 = prefs.getInt("teller3", MODE_PRIVATE);
+        teller3 = prefs.getInt("teller4", MODE_PRIVATE);
+        teller4 = prefs.getInt("teller5", MODE_PRIVATE);
+        teller5 = prefs.getInt("teller6", MODE_PRIVATE);
+        teller6 = prefs.getInt("teller7", MODE_PRIVATE);
+        teller7 = prefs.getInt("teller8", MODE_PRIVATE);
+        teller8 = prefs.getInt("teller9", MODE_PRIVATE);
+        teller9 = prefs.getInt("teller10", MODE_PRIVATE);
+        teller10 = prefs.getInt("teller11", MODE_PRIVATE);
+        teller11 = prefs.getInt("teller12", MODE_PRIVATE);
+
+        numara.setText(String.valueOf(teller+teller1+teller2+teller3+teller4+teller5+teller6+teller7+teller8+teller9+teller10+teller11));
+    }
+
+
+
+
+
+    @Override
+    protected void onPause(){
+        super.onPause();
+        saveObjectToPreferences(fAuth.getCurrentUser().getUid());
     }
 
 

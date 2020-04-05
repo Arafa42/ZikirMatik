@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -22,21 +23,18 @@ public class AllahuEkber extends AppCompatActivity {
     TextView tellerText;
     int teller=0;
     FirebaseAuth fAuth = FirebaseAuth.getInstance();
-
-
+    Vibrator vibe;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_allahu_ekber);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        vibe = (Vibrator) getSystemService(Context.VIBRATOR_SERVICE);
 
         tellerKnopPlus = findViewById(R.id.buttonPlus1);
         tellerKnopMin = findViewById(R.id.buttonMin1);
         tellerText = findViewById(R.id.nummer1);
-
-
-
 
 
         tellerKnopPlus.setOnClickListener(new View.OnClickListener() {
@@ -45,14 +43,7 @@ public class AllahuEkber extends AppCompatActivity {
 
                 teller++;
                 tellerText.setText(Integer.toString(teller));
-
-                SharedPreferences sharedPreferences = getSharedPreferences("myKey",MODE_PRIVATE);
-                SharedPreferences.Editor editor = sharedPreferences.edit();
-                editor.putString("teller",tellerText.getText().toString().trim());
-                editor.apply();
-                Intent intent = new Intent(AllahuEkber.this,OzetAllahuEkber.class);
-                //startActivity(intent);
-
+                vibe.vibrate(75);
             }
         });
 
@@ -60,34 +51,16 @@ public class AllahuEkber extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-
                 if(teller > 0) {
                     teller--;
                     tellerText.setText(Integer.toString(teller));
-
-                    SharedPreferences sharedPreferences = getSharedPreferences("myKey",MODE_PRIVATE);
-                    SharedPreferences.Editor editor = sharedPreferences.edit();
-                    editor.putString("teller",tellerText.getText().toString().trim());
-                    editor.apply();
-                    Intent intent = new Intent(AllahuEkber.this,OzetAllahuEkber.class);
+                    vibe.vibrate(20);
                 }
             }
         });
 
-
-
-
-
-
-
-
         getObjectFromPreferences(fAuth.getCurrentUser().getUid());
-
-
     }
-
-
-
 
 
     public void saveObjectToPreferences(String key) {
@@ -103,9 +76,6 @@ public class AllahuEkber extends AppCompatActivity {
         teller = prefs.getInt("teller1", MODE_PRIVATE);
         tellerText.setText(String.valueOf(teller));
     }
-
-
-
 
 
     @Override

@@ -1,79 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.zikirmatik">
+    package="com.example.zikirmatik"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
+    <uses-permission android:name="android.permission.VIBRATE" />
+
     <application
+        tools:ignore="LockedOrientationActivity"
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/ic_splash"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".OzetSubhanallahiVelhamdulillahi"  android:parentActivityName=".History"></activity>
-        <activity android:name=".OzetSubhanallahiBiHamdihi"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetSubhanallah"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetLaIlaheIllallah"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetLaHavleVela"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetIlahe_Vahdehu"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetIlahe_Melikul"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetEstagfirullah"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetEsmaUlHusna"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetElhamdulillah"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetBismillahiSubhanallahi"  android:parentActivityName=".History"/>
-        <activity android:name=".OzetAllahuEkber"  android:parentActivityName=".History"/>
+        <activity android:name=".OzetSubhanallahiVelhamdulillahi"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetSubhanallahiBiHamdihi"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetSubhanallah"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetLaIlaheIllallah"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetLaHavleVela"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetIlahe_Vahdehu"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetIlahe_Melikul"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetEstagfirullah"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetEsmaUlHusna"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetElhamdulillah"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetBismillahiSubhanallahi"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".OzetAllahuEkber"  android:parentActivityName=".History" android:screenOrientation = "portrait"/>
         <activity
             android:name=".EsmaUlHusna"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".AllahuEkber"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".Elhamdulillah"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".Subhanallah"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".Estagfirullah"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".SubhanallahiVelhamdulillahi"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".SubhanallahiBiHamdihi"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".LaHavleVela"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".LaIlaheIllallah"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".Ilahe_Melikul"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".Ilahe_Vahdehu"
-            android:parentActivityName=".MainActivity" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
         <activity
             android:name=".BismillahiSubhanallahi"
-            android:parentActivityName=".MainActivity" />
-        <activity android:name=".History" />
-        <activity android:name=".Profile" />
-        <activity android:name=".Register" />
+            android:parentActivityName=".MainActivity" android:screenOrientation = "portrait"/>
+        <activity android:name=".History" android:screenOrientation = "portrait"/>
+        <activity android:name=".Profile" android:screenOrientation = "portrait"/>
+        <activity android:name=".Register" android:screenOrientation = "portrait"/>
         <activity
             android:name=".SplashScreen"
+            android:screenOrientation = "portrait"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Login" />
-        <activity android:name=".MainActivity" />
+        <activity android:name=".Login" android:screenOrientation = "portrait"/>
+        <activity android:name=".MainActivity" android:screenOrientation = "portrait"/>
 
         <meta-data
             android:name="preloaded_fonts"
